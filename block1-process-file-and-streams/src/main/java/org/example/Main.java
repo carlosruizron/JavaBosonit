@@ -3,7 +3,6 @@ package org.example;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.net.SocketOption;
 import java.util.Optional;
 import java.util.List;
 import java.util.ArrayList;
@@ -75,6 +74,7 @@ public class Main {
 
     // Personas menores de 25 años. No debe aparecer el 0
     public static void Apartado1(List<People> list) {
+
         System.out.println("\nMenores de 25");
         list.stream().filter(People -> People.getEdad() < 25 && People.getEdad() != 0).forEach(people -> {
             System.out.println("Nombre: " + people.getNombre() + " Ciudad: " + people.getCiudad() + " Edad: " + people.getEdad());
@@ -83,6 +83,7 @@ public class Main {
 
     // Nombre que NO empiecen con letra A
     public static void Apartado2(List<People> list) {
+
         System.out.println("\nNombres sin A al comienzo");
         list.stream().filter(People -> !People.getNombre().startsWith("A")).forEach(people -> {
             System.out.println("Nombre: " + people.getNombre() + " Ciudad: " + people.getCiudad() + " Edad: " + people.getEdad());
