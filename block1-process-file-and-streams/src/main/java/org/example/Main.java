@@ -22,13 +22,13 @@ public class Main {
         linea1 = br.readLine();
 
         try {
-            // Cambiamos lo valores indicados por el ejercicio si los recibidos no estan especificados.
+            // Cambiamos lo valores indicados por el ejercicio si los recibidos no están especificados.
             while (linea1 != null) {
                 String[] datos = linea1.split(":", -3);
                 if(datos[1] == "") {
                     datos[1] = "Unknown";
                 }
-                else if(datos[2] == "") {
+                if(datos[2] == "") {
                     datos[2] = "0";
                 }
                 // Metemos los datos en el array creado anteriormente
@@ -53,8 +53,6 @@ public class Main {
         Apartado4(people);
     }
 
-
-
     public static boolean checkPoints(String linea1) {
         int cont = 0;
         // Hacemos un bucle y vamos contando cuantos separadores tiene la linea
@@ -64,12 +62,8 @@ public class Main {
             }
         }
 
-        //	Si contamos 2  significa que estan todos
-        if (cont == 2) {
-            return true;
-        } else {
-            return false;
-        }
+        //	Si cont no es 2 va a salir false
+        return cont == 2;
     }
 
     // Personas menores de 25 años. No debe aparecer el 0
