@@ -1,2 +1,2 @@
-greeting:Hello world!
-my.number:100
+greeting=Hello world! desde el yml
+my.number=100
