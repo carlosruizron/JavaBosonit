@@ -1,15 +1,16 @@
 package com.example.block5logging;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.util.logging.FileHandler;
+import java.util.logging.Logger;
+
 @SpringBootApplication
 public class Block5LoggingApplication implements CommandLineRunner {
 
-    private static Logger LOG = LoggerFactory.getLogger(Block5LoggingApplication.class);
+    private static Logger Log = Logger.getLogger("logging");
 
     public static void main(String[] args) {
         SpringApplication.run(Block5LoggingApplication.class, args);
@@ -17,9 +18,14 @@ public class Block5LoggingApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        LOG.warn("This is an error");
-        LOG.trace("This is an error");
-        LOG.error("This is an error");
+
+        FileHandler handler = new FileHandler("block5-logging/src/main/resources/spring-logging.log", true);
+        Log.addHandler(handler);
+
+        Log.warning("Esto es una advertencia");
+        Log.severe("Esto es un error grave");
+        Log.info("El proceso a finalizado");
+
     }
 
 }

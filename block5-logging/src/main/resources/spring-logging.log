@@ -1,0 +1,40 @@
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-10-31T11:52:43.339905900Z</date>
+  <millis>1667217163339</millis>
+  <nanos>905900</nanos>
+  <sequence>3</sequence>
+  <logger>logging</logger>
+  <level>WARNING</level>
+  <class>com.example.block5logging.Block5LoggingApplication</class>
+  <method>run</method>
+  <thread>19</thread>
+  <message>Esto es una advertencia</message>
+</record>
+<record>
+  <date>2022-10-31T11:52:43.340901500Z</date>
+  <millis>1667217163340</millis>
+  <nanos>901500</nanos>
+  <sequence>4</sequence>
+  <logger>logging</logger>
+  <level>SEVERE</level>
+  <class>com.example.block5logging.Block5LoggingApplication</class>
+  <method>run</method>
+  <thread>19</thread>
+  <message>Esto es un error grave</message>
+</record>
+<record>
+  <date>2022-10-31T11:52:43.341897Z</date>
+  <millis>1667217163341</millis>
+  <nanos>897000</nanos>
+  <sequence>5</sequence>
+  <logger>logging</logger>
+  <level>INFO</level>
+  <class>com.example.block5logging.Block5LoggingApplication</class>
+  <method>run</method>
+  <thread>19</thread>
+  <message>El proceso a finalizado</message>
+</record>
