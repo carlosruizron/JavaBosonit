@@ -19,7 +19,7 @@ public class Block5LoggingApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        FileHandler handler = new FileHandler("block5-logging/src/main/resources/spring-logging.log", true);
+        FileHandler handler = new FileHandler("./src/main/resources/spring-logging.log", true);
         Log.addHandler(handler);
 
         Log.warning("Esto es una advertencia");

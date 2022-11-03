@@ -38,3 +38,204 @@
   <thread>19</thread>
   <message>El proceso a finalizado</message>
 </record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-02T10:34:31.480283700Z</date>
+  <millis>1667385271480</millis>
+  <nanos>283700</nanos>
+  <sequence>3</sequence>
+  <logger>logging</logger>
+  <level>WARNING</level>
+  <class>com.example.block5logging.Block5LoggingApplication</class>
+  <method>run</method>
+  <thread>19</thread>
+  <message>Esto es una advertencia</message>
+</record>
+<record>
+  <date>2022-11-02T10:34:31.482271100Z</date>
+  <millis>1667385271482</millis>
+  <nanos>271100</nanos>
+  <sequence>4</sequence>
+  <logger>logging</logger>
+  <level>SEVERE</level>
+  <class>com.example.block5logging.Block5LoggingApplication</class>
+  <method>run</method>
+  <thread>19</thread>
+  <message>Esto es un error grave</message>
+</record>
+<record>
+  <date>2022-11-02T10:34:31.482271100Z</date>
+  <millis>1667385271482</millis>
+  <nanos>271100</nanos>
+  <sequence>5</sequence>
+  <logger>logging</logger>
+  <level>INFO</level>
+  <class>com.example.block5logging.Block5LoggingApplication</class>
+  <method>run</method>
+  <thread>19</thread>
+  <message>El proceso a finalizado</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-02T10:55:28.462999100Z</date>
+  <millis>1667386528462</millis>
+  <nanos>999100</nanos>
+  <sequence>3</sequence>
+  <logger>logging</logger>
+  <level>WARNING</level>
+  <class>com.example.block5logging.Block5LoggingApplication</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>Esto es una advertencia</message>
+</record>
+<record>
+  <date>2022-11-02T10:55:28.464994400Z</date>
+  <millis>1667386528464</millis>
+  <nanos>994400</nanos>
+  <sequence>4</sequence>
+  <logger>logging</logger>
+  <level>SEVERE</level>
+  <class>com.example.block5logging.Block5LoggingApplication</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>Esto es un error grave</message>
+</record>
+<record>
+  <date>2022-11-02T10:55:28.464994400Z</date>
+  <millis>1667386528464</millis>
+  <nanos>994400</nanos>
+  <sequence>5</sequence>
+  <logger>logging</logger>
+  <level>INFO</level>
+  <class>com.example.block5logging.Block5LoggingApplication</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>El proceso a finalizado</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-02T10:56:21.606961500Z</date>
+  <millis>1667386581606</millis>
+  <nanos>961500</nanos>
+  <sequence>3</sequence>
+  <logger>logging</logger>
+  <level>WARNING</level>
+  <class>com.example.block5logging.Block5LoggingApplication</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>Esto es una advertencia</message>
+</record>
+<record>
+  <date>2022-11-02T10:56:21.608376700Z</date>
+  <millis>1667386581608</millis>
+  <nanos>376700</nanos>
+  <sequence>4</sequence>
+  <logger>logging</logger>
+  <level>SEVERE</level>
+  <class>com.example.block5logging.Block5LoggingApplication</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>Esto es un error grave</message>
+</record>
+<record>
+  <date>2022-11-02T10:56:21.608784600Z</date>
+  <millis>1667386581608</millis>
+  <nanos>784600</nanos>
+  <sequence>5</sequence>
+  <logger>logging</logger>
+  <level>INFO</level>
+  <class>com.example.block5logging.Block5LoggingApplication</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>El proceso a finalizado</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-02T10:58:40.069824700Z</date>
+  <millis>1667386720069</millis>
+  <nanos>824700</nanos>
+  <sequence>3</sequence>
+  <logger>logging</logger>
+  <level>WARNING</level>
+  <class>com.example.block5logging.Block5LoggingApplication</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>Esto es una advertencia</message>
+</record>
+<record>
+  <date>2022-11-02T10:58:40.071819200Z</date>
+  <millis>1667386720071</millis>
+  <nanos>819200</nanos>
+  <sequence>4</sequence>
+  <logger>logging</logger>
+  <level>SEVERE</level>
+  <class>com.example.block5logging.Block5LoggingApplication</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>Esto es un error grave</message>
+</record>
+<record>
+  <date>2022-11-02T10:58:40.072812900Z</date>
+  <millis>1667386720072</millis>
+  <nanos>812900</nanos>
+  <sequence>5</sequence>
+  <logger>logging</logger>
+  <level>INFO</level>
+  <class>com.example.block5logging.Block5LoggingApplication</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>El proceso a finalizado</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-02T11:03:05.136020500Z</date>
+  <millis>1667386985136</millis>
+  <nanos>20500</nanos>
+  <sequence>3</sequence>
+  <logger>logging</logger>
+  <level>WARNING</level>
+  <class>com.example.block5logging.Block5LoggingApplication</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>Esto es una advertencia</message>
+</record>
+<record>
+  <date>2022-11-02T11:03:05.137598500Z</date>
+  <millis>1667386985137</millis>
+  <nanos>598500</nanos>
+  <sequence>4</sequence>
+  <logger>logging</logger>
+  <level>SEVERE</level>
+  <class>com.example.block5logging.Block5LoggingApplication</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>Esto es un error grave</message>
+</record>
+<record>
+  <date>2022-11-02T11:03:05.138602900Z</date>
+  <millis>1667386985138</millis>
+  <nanos>602900</nanos>
+  <sequence>5</sequence>
+  <logger>logging</logger>
+  <level>INFO</level>
+  <class>com.example.block5logging.Block5LoggingApplication</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>El proceso a finalizado</message>
+</record>
+</log>
