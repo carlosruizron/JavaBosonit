@@ -12,6 +12,7 @@ public class Controller {
     @GetMapping("/users/{user}")
 
     public String user(@PathVariable("user") String name){
+
         return "Hello, my name is " + name;
     }
 
