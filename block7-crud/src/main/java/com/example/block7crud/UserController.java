@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.FileNotFoundException;
 
+//En esta clase creamos los controladores para poder insertar, borrar o buscar información.
 @RestController
 @RequestMapping(value="/user")
 public class UserController {

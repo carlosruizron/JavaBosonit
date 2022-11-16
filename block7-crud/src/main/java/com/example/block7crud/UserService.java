@@ -1,7 +1,12 @@
 package com.example.block7crud;
 
+import org.springframework.stereotype.Service;
+
 import java.io.FileNotFoundException;
 
+//Creamos la interfaz de servicio para definir los métodos que vamos a utilizar en ServiceImpl
+
+@Service
 public interface UserService {
 
     User createUser(User user);

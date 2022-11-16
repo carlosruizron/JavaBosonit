@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.FileNotFoundException;
 
+// En esta clase sobreescribimos los métodos definidos en la clase UserService
 @Service
 public class UserServiceImpl implements UserService{
 
