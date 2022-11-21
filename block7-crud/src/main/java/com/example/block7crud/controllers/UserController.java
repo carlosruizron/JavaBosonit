@@ -1,5 +1,7 @@
-package com.example.block7crud;
+package com.example.block7crud.controllers;
 
+import com.example.block7crud.entity.User;
+import com.example.block7crud.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,7 +16,7 @@ public class UserController {
     UserService userService;
 
     @GetMapping(value="getById/{id}")
-    public User getUserById(@PathVariable int id) throws FileNotFoundException {
+    public User getUserById(@PathVariable Integer id) throws FileNotFoundException {
         return userService.getUserById(id);
     }
 
@@ -25,16 +27,19 @@ public class UserController {
 
     @PostMapping(value="/insert")
     public User insertUser(@RequestBody User user) {
-       return userService.createUser(user);
+
+        return userService.createUser(user);
     }
 
     @PutMapping(value="/update")
     public User updateUser(@RequestBody User user) {
+
         return userService.updateUser(user);
     }
 
     @DeleteMapping(value="delete/{id}")
-    public void deleteUser(@PathVariable int id) {
+    public void deleteUser(@PathVariable Integer id) {
+
         userService.deleteUser(id);
     }
 

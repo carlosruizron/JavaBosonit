@@ -1,4 +1,4 @@
-package com.example.block7crud;
+package com.example.block7crud.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -13,7 +13,7 @@ public class User {
 
     @Id
     @GeneratedValue
-    private int id;
+    private Integer id;
 
     @Column
     private String name;
