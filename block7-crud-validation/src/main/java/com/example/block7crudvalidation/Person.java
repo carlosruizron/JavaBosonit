@@ -1,9 +1,8 @@
 package com.example.block7crudvalidation;
 
 import com.example.block7crudvalidation.exception.CreateUserException;
+import jakarta.persistence.*;
 import lombok.Data;
-
-import javax.persistence.*;
 import java.util.Date;
 
 @Data

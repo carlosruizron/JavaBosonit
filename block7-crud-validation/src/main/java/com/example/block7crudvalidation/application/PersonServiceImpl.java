@@ -3,6 +3,7 @@ package com.example.block7crudvalidation.application;
 import com.example.block7crudvalidation.DtoPerson;
 import com.example.block7crudvalidation.Person;
 import com.example.block7crudvalidation.exception.CreateUserException;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,11 +15,9 @@ public class PersonServiceImpl implements PersonService {
     @Autowired
     PersonRepository personRepository;
 
-
     @Override
     public Person createPerson(Person person) {
-        personRepository.save(person);
-        return person;
+        return personRepository.save(person);
     }
 
     @Override
