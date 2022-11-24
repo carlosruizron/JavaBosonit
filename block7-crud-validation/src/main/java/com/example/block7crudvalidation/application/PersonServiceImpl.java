@@ -1,12 +1,13 @@
 package com.example.block7crudvalidation.application;
 
-import com.example.block7crudvalidation.DtoPerson;
-import com.example.block7crudvalidation.Person;
-import com.example.block7crudvalidation.exception.CreateUserException;
-import org.modelmapper.ModelMapper;
+import com.example.block7crudvalidation.dto.DtoPersonInp;
+import com.example.block7crudvalidation.domain.Person;
+import com.example.block7crudvalidation.dto.DtoPersonOut;
+import com.example.block7crudvalidation.exception.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -16,31 +17,49 @@ public class PersonServiceImpl implements PersonService {
     PersonRepository personRepository;
 
     @Override
-    public Person createPerson(Person person) {
-        return personRepository.save(person);
-    }
-
-    @Override
-    public Person updatePerson(Person person) {
+    public DtoPersonOut createPerson(DtoPersonInp dtoPersonInp) throws Exception{
+        Person person = new Person(dtoPersonInp);
         personRepository.save(person);
-        return person;
+        return new DtoPersonOut(person);
     }
 
     @Override
-    public List<Person> getByName(String name) {
+    public DtoPersonOut updatePerson(DtoPersonInp dtoPersonInp) throws Exception{
 
-        return personRepository.findByName(name);
+        Person person = new Person(dtoPersonInp);
+        personRepository.save(person);
+        return new DtoPersonOut(person);
     }
 
     @Override
-    public Person getById(Integer id) throws CreateUserException {
-       return personRepository.findById(id).orElseThrow(() -> new CreateUserException("No hay nadie con este id"));
+    public List<DtoPersonOut> getByName(String name) throws EntityNotFoundException{
 
+        List<DtoPersonOut> list = new ArrayList<>();
+        personRepository.findByName(name).forEach(person -> {
+            list.add(new DtoPersonOut(person));
+        });
+        return list;
     }
 
     @Override
-    public List<Person> getAll() {
+    public DtoPersonOut readById(Integer id) throws EntityNotFoundException {
+        Person person = personRepository.findById(id).orElseThrow(() -> new EntityNotFoundException());
+       return new DtoPersonOut(person);
+    }
 
-        return personRepository.findAll();
+    @Override
+    public List<DtoPersonOut> getAll() {
+        List<DtoPersonOut> list = new ArrayList<>();
+        personRepository.findAll().forEach(person -> {
+            DtoPersonOut dtoPersonOut = new DtoPersonOut(person);
+            list.add(dtoPersonOut);
+        });
+        return list;
+    }
+
+    @Override
+    public void deleteUserById(Integer id) throws EntityNotFoundException {
+        personRepository.deleteById(id);
+
     }
 }
