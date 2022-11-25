@@ -1,4 +1,4 @@
-package com.example.block7crudvalidation;
+package com.example.block7crudvalidation.exception;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -6,13 +6,12 @@ import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class CustomError {
 
     private Date timeStamp;
-    private int HTTPcode;
+    private int httpCode;
     private String message;
 
 }

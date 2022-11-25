@@ -1,14 +1,12 @@
 package com.example.block7crudvalidation.exception;
 
-import com.example.block7crudvalidation.CustomError;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
-import java.util.Calendar;
+@ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
+public class UnprocessableEntityException extends RuntimeException{
+    public UnprocessableEntityException(String message) {
 
-public class UnprocessableEntityException extends Exception{
-
-    public CustomError UnprocessableEntityException() {
-
-        CustomError customError = new CustomError(Calendar.getInstance().getTime(), 422, "El registro solicitado no existe");
-        return customError;
+        super(message);
     }
 }

@@ -1,13 +1,14 @@
 package com.example.block7crudvalidation.exception;
 
-import com.example.block7crudvalidation.CustomError;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 import java.util.Calendar;
 
-public class EntityNotFoundException extends Exception{
-    public CustomError EntityNotFoundException(String errorMessage) {
+@ResponseStatus(HttpStatus.NOT_FOUND)
+public class EntityNotFoundException extends RuntimeException{
+    public EntityNotFoundException(String errorMessage) {
 
-        CustomError customError = new CustomError(Calendar.getInstance().getTime(), 404, "El registro solicitado no existe");
-        return customError;
+        super(errorMessage);
     }
 }

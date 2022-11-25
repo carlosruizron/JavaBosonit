@@ -1,10 +1,10 @@
-package com.example.block7crudvalidation.controller;
+package com.example.block7crudvalidation.infrastucture.controller;
 
-import com.example.block7crudvalidation.dto.DtoPersonInp;
-import com.example.block7crudvalidation.application.PersonService;
-import com.example.block7crudvalidation.dto.DtoPersonOut;
+import com.example.block7crudvalidation.exception.UnprocessableEntityException;
+import com.example.block7crudvalidation.infrastucture.dto.DtoPersonInp;
+import com.example.block7crudvalidation.application.interfaces.PersonService;
+import com.example.block7crudvalidation.infrastucture.dto.DtoPersonOut;
 import com.example.block7crudvalidation.exception.EntityNotFoundException;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,21 +15,18 @@ import java.util.List;
 public class PersonController {
 
     @Autowired
-    ModelMapper modelMapper;
-
-    @Autowired
     PersonService personService;
 
     @PostMapping(value="/createPerson")
-    public DtoPersonOut createPerson (@RequestBody DtoPersonInp dtoPersonInp) throws Exception{
+    public DtoPersonOut createPerson (@RequestBody DtoPersonInp dtoPersonInp) throws UnprocessableEntityException {
 
         return personService.createPerson(dtoPersonInp);
     }
 
-    @PutMapping(value="/updatePerson")
-    public DtoPersonOut updatePerson(@RequestBody DtoPersonInp dtoPersonInp) throws Exception{
+    @PutMapping(value="/updatePerson/{id}")
+    public DtoPersonOut updatePerson(@PathVariable("id") String id, @RequestBody DtoPersonInp dtoPersonInp){
 
-        return personService.updatePerson(dtoPersonInp);
+        return personService.updatePerson(id, dtoPersonInp);
     }
 
     @GetMapping(value="/getByName/{name}")
@@ -39,7 +36,7 @@ public class PersonController {
     }
 
     @GetMapping(value="/getById/{id}")
-    public DtoPersonOut getById(@PathVariable(name="id") Integer id) throws EntityNotFoundException {
+    public DtoPersonOut getById(@PathVariable(name="id") String id) throws EntityNotFoundException {
 
         return personService.readById(id);
     }
@@ -52,7 +49,7 @@ public class PersonController {
     }
 
     @DeleteMapping(value="deleteById/{id}")
-    public String deletePersonById(@PathVariable("id") Integer id) throws EntityNotFoundException {
+    public String deletePersonById(@PathVariable("id") String id) throws EntityNotFoundException {
 
        personService.deleteUserById(id);
        return "Se ha eliminado el usuario con el id: " + id;

@@ -1,8 +1,10 @@
-package com.example.block7crudvalidation.dto;
+package com.example.block7crudvalidation.infrastucture.dto;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.util.Date;

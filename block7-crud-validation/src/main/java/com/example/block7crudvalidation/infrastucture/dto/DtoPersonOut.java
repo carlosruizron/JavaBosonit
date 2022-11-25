@@ -1,4 +1,4 @@
-package com.example.block7crudvalidation.dto;
+package com.example.block7crudvalidation.infrastucture.dto;
 
 import com.example.block7crudvalidation.domain.Person;
 import lombok.Data;
