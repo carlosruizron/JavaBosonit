@@ -8,5 +8,6 @@ public class UnprocessableEntityException extends RuntimeException{
     public UnprocessableEntityException(String message) {
 
         super(message);
+        System.out.println("Error: " + message);
     }
 }

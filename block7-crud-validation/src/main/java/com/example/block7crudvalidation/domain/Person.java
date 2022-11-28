@@ -56,7 +56,7 @@ public class Person {
     Date termination_date;
 
     public Person(DtoPersonInp dtoPersonInp) throws UnprocessableEntityException {
-        if((dtoPersonInp.getUsername().length() >= 10) && (dtoPersonInp.getUsername().length() <= 6) && (dtoPersonInp.getUsername() == null)) {
+        if((dtoPersonInp.getUsername() == null) && (dtoPersonInp.getUsername().length() >= 10) && (dtoPersonInp.getUsername().length() <= 6)) {
             throw new UnprocessableEntityException("El usuario no puede estar nulo");
         } else {
             setUsername(dtoPersonInp.getUsername());
