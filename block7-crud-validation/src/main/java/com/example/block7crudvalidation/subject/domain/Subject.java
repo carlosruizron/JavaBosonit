@@ -1,7 +1,7 @@
-package com.example.block7crudvalidation.student_subject.domain;
+package com.example.block7crudvalidation.subject.domain;
 
 import com.example.block7crudvalidation.student.domain.Student;
-import com.example.block7crudvalidation.student_subject.infrastucture.dto.DtoSubjectInp;
+import com.example.block7crudvalidation.subject.infrastucture.dto.DtoSubjectInp;
 import com.example.block7crudvalidation.teacher.domain.Teacher;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

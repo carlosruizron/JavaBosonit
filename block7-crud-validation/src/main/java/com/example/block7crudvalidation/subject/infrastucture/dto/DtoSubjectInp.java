@@ -1,4 +1,4 @@
-package com.example.block7crudvalidation.student_subject.infrastucture.dto;
+package com.example.block7crudvalidation.subject.infrastucture.dto;
 
 import jakarta.validation.constraints.NotEmpty;
 import lombok.Data;

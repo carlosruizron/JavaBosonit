@@ -1,9 +1,9 @@
-package com.example.block7crudvalidation.student_subject.application.interfaces;
+package com.example.block7crudvalidation.subject.application.interfaces;
 
 import com.example.block7crudvalidation.exception.EntityNotFoundException;
 import com.example.block7crudvalidation.exception.UnprocessableEntityException;
-import com.example.block7crudvalidation.student_subject.infrastucture.dto.DtoSubjectInp;
-import com.example.block7crudvalidation.student_subject.infrastucture.dto.DtoSubjectOut;
+import com.example.block7crudvalidation.subject.infrastucture.dto.DtoSubjectInp;
+import com.example.block7crudvalidation.subject.infrastucture.dto.DtoSubjectOut;
 import java.util.List;
 
 

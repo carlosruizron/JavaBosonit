@@ -1,6 +1,6 @@
-package com.example.block7crudvalidation.student_subject.application;
+package com.example.block7crudvalidation.subject.application;
 
-import com.example.block7crudvalidation.student_subject.domain.Subject;
+import com.example.block7crudvalidation.subject.domain.Subject;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

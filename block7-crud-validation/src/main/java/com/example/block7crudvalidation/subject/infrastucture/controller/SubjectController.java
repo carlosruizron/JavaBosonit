@@ -1,12 +1,10 @@
-package com.example.block7crudvalidation.student_subject.infrastucture.controller;
+package com.example.block7crudvalidation.subject.infrastucture.controller;
 
 import com.example.block7crudvalidation.exception.EntityNotFoundException;
 import com.example.block7crudvalidation.exception.UnprocessableEntityException;
-import com.example.block7crudvalidation.student_subject.application.impls.SubjectServiceImpl;
-import com.example.block7crudvalidation.student_subject.infrastucture.dto.DtoSubjectInp;
-import com.example.block7crudvalidation.student_subject.infrastucture.dto.DtoSubjectOut;
-import com.example.block7crudvalidation.teacher.infrastucture.dto.DtoTeacherInp;
-import com.example.block7crudvalidation.teacher.infrastucture.dto.DtoTeacherOut;
+import com.example.block7crudvalidation.subject.application.impls.SubjectServiceImpl;
+import com.example.block7crudvalidation.subject.infrastucture.dto.DtoSubjectInp;
+import com.example.block7crudvalidation.subject.infrastucture.dto.DtoSubjectOut;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

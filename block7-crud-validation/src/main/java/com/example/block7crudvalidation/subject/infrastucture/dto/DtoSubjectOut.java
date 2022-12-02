@@ -1,6 +1,6 @@
-package com.example.block7crudvalidation.student_subject.infrastucture.dto;
+package com.example.block7crudvalidation.subject.infrastucture.dto;
 
-import com.example.block7crudvalidation.student_subject.domain.Subject;
+import com.example.block7crudvalidation.subject.domain.Subject;
 import lombok.Data;
 
 import java.util.Date;

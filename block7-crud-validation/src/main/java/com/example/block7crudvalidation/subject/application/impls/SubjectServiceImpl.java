@@ -1,15 +1,12 @@
-package com.example.block7crudvalidation.student_subject.application.impls;
+package com.example.block7crudvalidation.subject.application.impls;
 
 import com.example.block7crudvalidation.exception.EntityNotFoundException;
 import com.example.block7crudvalidation.exception.UnprocessableEntityException;
-import com.example.block7crudvalidation.student_subject.application.SubjectRepository;
-import com.example.block7crudvalidation.student_subject.application.interfaces.SubjectService;
-import com.example.block7crudvalidation.student_subject.domain.Subject;
-import com.example.block7crudvalidation.student_subject.infrastucture.dto.DtoSubjectInp;
-import com.example.block7crudvalidation.student_subject.infrastucture.dto.DtoSubjectOut;
-import com.example.block7crudvalidation.teacher.application.interfaces.TeacherService;
-import com.example.block7crudvalidation.teacher.domain.Teacher;
-import com.example.block7crudvalidation.teacher.infrastucture.dto.DtoTeacherOut;
+import com.example.block7crudvalidation.subject.application.SubjectRepository;
+import com.example.block7crudvalidation.subject.application.interfaces.SubjectService;
+import com.example.block7crudvalidation.subject.domain.Subject;
+import com.example.block7crudvalidation.subject.infrastucture.dto.DtoSubjectInp;
+import com.example.block7crudvalidation.subject.infrastucture.dto.DtoSubjectOut;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
