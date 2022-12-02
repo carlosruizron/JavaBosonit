@@ -1,4 +1,4 @@
-package com.example.block7crudvalidation.infrastucture.dto;
+package com.example.block7crudvalidation.person.infrastucture.dto;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -12,7 +12,7 @@ import java.util.Date;
 @Data
 public class DtoPersonInp implements Serializable {
 
-    private int id_person;
+    private Integer id_person;
 
     private String username;
     private String password;

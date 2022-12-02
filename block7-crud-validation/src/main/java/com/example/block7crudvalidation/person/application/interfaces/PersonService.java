@@ -1,8 +1,8 @@
-package com.example.block7crudvalidation.application.interfaces;
+package com.example.block7crudvalidation.person.application.interfaces;
 
 import com.example.block7crudvalidation.exception.UnprocessableEntityException;
-import com.example.block7crudvalidation.infrastucture.dto.DtoPersonInp;
-import com.example.block7crudvalidation.infrastucture.dto.DtoPersonOut;
+import com.example.block7crudvalidation.person.infrastucture.dto.DtoPersonInp;
+import com.example.block7crudvalidation.person.infrastucture.dto.DtoPersonOut;
 import com.example.block7crudvalidation.exception.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 

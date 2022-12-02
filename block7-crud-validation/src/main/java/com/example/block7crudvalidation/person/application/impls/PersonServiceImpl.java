@@ -1,11 +1,11 @@
-package com.example.block7crudvalidation.application.impls;
+package com.example.block7crudvalidation.person.application.impls;
 
-import com.example.block7crudvalidation.application.PersonRepository;
-import com.example.block7crudvalidation.application.interfaces.PersonService;
+import com.example.block7crudvalidation.person.application.PersonRepository;
+import com.example.block7crudvalidation.person.application.interfaces.PersonService;
 import com.example.block7crudvalidation.exception.UnprocessableEntityException;
-import com.example.block7crudvalidation.infrastucture.dto.DtoPersonInp;
-import com.example.block7crudvalidation.domain.Person;
-import com.example.block7crudvalidation.infrastucture.dto.DtoPersonOut;
+import com.example.block7crudvalidation.person.infrastucture.dto.DtoPersonInp;
+import com.example.block7crudvalidation.person.domain.Person;
+import com.example.block7crudvalidation.person.infrastucture.dto.DtoPersonOut;
 import com.example.block7crudvalidation.exception.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,7 +27,7 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
-    public DtoPersonOut updatePerson(String id, DtoPersonInp dtoPersonInp) throws EntityNotFoundException{
+    public DtoPersonOut updatePerson(String id, DtoPersonInp dtoPersonInp) throws EntityNotFoundException {
 
         Person person = personRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("El usuario con el id " + id + " no se encuentra"));
         person.update(dtoPersonInp);

@@ -1,6 +1,6 @@
-package com.example.block7crudvalidation.infrastucture.dto;
+package com.example.block7crudvalidation.person.infrastucture.dto;
 
-import com.example.block7crudvalidation.domain.Person;
+import com.example.block7crudvalidation.person.domain.Person;
 import lombok.Data;
 
 import java.util.Date;
@@ -8,7 +8,7 @@ import java.util.Date;
 @Data
 public class DtoPersonOut {
 
-    private int id_person;
+    private Integer id_person;
     private String username;
     private String password;
     private String name;

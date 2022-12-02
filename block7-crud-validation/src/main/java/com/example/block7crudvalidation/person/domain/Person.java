@@ -1,7 +1,7 @@
-package com.example.block7crudvalidation.domain;
+package com.example.block7crudvalidation.person.domain;
 
 import com.example.block7crudvalidation.exception.UnprocessableEntityException;
-import com.example.block7crudvalidation.infrastucture.dto.DtoPersonInp;
+import com.example.block7crudvalidation.person.infrastucture.dto.DtoPersonInp;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,7 +20,7 @@ public class Person {
 
     @Id
     @GeneratedValue
-    int id_person;
+    Integer id_person;
 
     @Column
     String username;
