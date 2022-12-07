@@ -14,13 +14,4 @@ public class DtoTeacherInp implements Serializable {
     private String comments;
     private String branch;
 
-    @Override
-    public String toString() {
-        return "DtoTeacherInp{" +
-                "id_teacher=" + id_teacher +
-                ", id_person=" + id_person +
-                ", comments='" + comments + '\'' +
-                ", branch='" + branch + '\'' +
-                '}';
-    }
 }

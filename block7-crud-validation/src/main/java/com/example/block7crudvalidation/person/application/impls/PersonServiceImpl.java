@@ -7,6 +7,12 @@ import com.example.block7crudvalidation.person.infrastucture.dto.DtoPersonInp;
 import com.example.block7crudvalidation.person.domain.Person;
 import com.example.block7crudvalidation.person.infrastucture.dto.DtoPersonOut;
 import com.example.block7crudvalidation.exception.EntityNotFoundException;
+import com.example.block7crudvalidation.person.infrastucture.dto.DtoStudentPerson;
+import com.example.block7crudvalidation.person.infrastucture.dto.DtoTeacherPerson;
+import com.example.block7crudvalidation.student.application.StudentRepository;
+import com.example.block7crudvalidation.student.domain.Student;
+import com.example.block7crudvalidation.teacher.application.TeacherRepository;
+import com.example.block7crudvalidation.teacher.domain.Teacher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +25,12 @@ public class PersonServiceImpl implements PersonService {
     @Autowired
     PersonRepository personRepository;
 
+    @Autowired
+    StudentRepository studentRepository;
+
+    @Autowired
+    TeacherRepository teacherRepository;
+
     @Override
     public DtoPersonOut createPerson(DtoPersonInp dtoPersonInp) throws UnprocessableEntityException {
         Person person = new Person(dtoPersonInp);
@@ -27,7 +39,7 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
-    public DtoPersonOut updatePerson(String id, DtoPersonInp dtoPersonInp) throws EntityNotFoundException {
+    public DtoPersonOut updatePerson(Integer id, DtoPersonInp dtoPersonInp) throws EntityNotFoundException {
 
         Person person = personRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("El usuario con el id " + id + " no se encuentra"));
         person.update(dtoPersonInp);
@@ -46,7 +58,7 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
-    public DtoPersonOut readById(String id) throws EntityNotFoundException {
+    public DtoPersonOut readById(Integer id) throws EntityNotFoundException {
         Person person = personRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("No se ha encontrado el usuario con el id " + id));
        return new DtoPersonOut(person);
     }
@@ -61,11 +73,31 @@ public class PersonServiceImpl implements PersonService {
         return list;
     }
 
+
     @Override
-    public void deleteUserById(String id) throws EntityNotFoundException {
+    public void deleteUserById(Integer id) throws EntityNotFoundException {
 
         Person person = personRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("No ha ningún usuario con esta id: " + id));
            personRepository.delete(person);
 
     }
+
+//        public List<Student> getPersonStudent() {
+//        List<Student> list = new ArrayList<>();
+//        studentRepository.findAll().forEach(student -> {
+//            list.add(student);
+//        });
+//        return list;
+//    }
+//
+//    public List<DtoTeacherPerson> getPersonTeacher() {
+//        List<DtoTeacherPerson> list = new ArrayList<>();
+//        teacherRepository.findAll().forEach(teacher -> {
+//            DtoTeacherPerson dtoTeacherPerson = new DtoTeacherPerson(teacher);
+//            list.add(dtoTeacherPerson);
+//        });
+//        return list;
+//    }
+
+
 }

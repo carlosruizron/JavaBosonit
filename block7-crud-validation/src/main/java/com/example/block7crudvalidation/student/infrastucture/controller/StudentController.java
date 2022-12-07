@@ -5,6 +5,7 @@ import com.example.block7crudvalidation.exception.UnprocessableEntityException;
 import com.example.block7crudvalidation.student.application.interfaces.StudentService;
 import com.example.block7crudvalidation.student.infrastucture.dto.DtoStudentInp;
 import com.example.block7crudvalidation.student.infrastucture.dto.DtoStudentOut;
+import com.example.block7crudvalidation.student.infrastucture.dto.DtoStudentOutFull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,19 +31,25 @@ public class StudentController {
     }
 
     @GetMapping("/{id}")
-    public DtoStudentOut getById(@PathVariable(name="id") String id) throws EntityNotFoundException {
+    public DtoStudentOut getById(@PathVariable(name="id") Integer id, @RequestParam(name = "outputType", defaultValue = "simple") String type) throws EntityNotFoundException {
 
-        return studentService.readById(id);
+        if (type.equals("full")) {
+            return new DtoStudentOutFull(studentService.readById(id));
+        }
+        if (type.equals("simple")) {
+            return new DtoStudentOut(studentService.readById(id)) ;
+        }
+        return null;
     }
 
     @PutMapping("/{id}")
-    public DtoStudentOut updateStudent(@PathVariable("id") String id, @RequestBody DtoStudentInp dtoStudentInp){
+    public DtoStudentOut updateStudent(@PathVariable("id") Integer id, @RequestBody DtoStudentInp dtoStudentInp){
 
         return studentService.updateStudent(id, dtoStudentInp);
     }
 
     @DeleteMapping("/{id}")
-    public String deletePersonById(@PathVariable("id") String id) throws EntityNotFoundException {
+    public String deletePersonById(@PathVariable("id") Integer id) throws EntityNotFoundException {
 
        studentService.deleteUserById(id);
        return "Se ha eliminado el usuario con el id: " + id;

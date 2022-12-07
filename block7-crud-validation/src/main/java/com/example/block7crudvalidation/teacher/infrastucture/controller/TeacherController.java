@@ -30,19 +30,19 @@ public class TeacherController {
     }
 
     @GetMapping("/{id}")
-    public DtoTeacherOut getById(@PathVariable(name="id") String id) throws EntityNotFoundException {
+    public DtoTeacherOut getById(@PathVariable(name="id") Integer id) throws EntityNotFoundException {
 
         return teacherService.readById(id);
     }
 
     @PutMapping("/{id}")
-    public DtoTeacherOut updateTeacher(@PathVariable("id") String id, @RequestBody DtoTeacherInp dtoTeacherInp){
+    public DtoTeacherOut updateTeacher(@PathVariable("id") Integer id, @RequestBody DtoTeacherInp dtoTeacherInp){
 
         return teacherService.updateTeacher(id, dtoTeacherInp);
     }
 
     @DeleteMapping("/{id}")
-    public String deletePersonById(@PathVariable("id") String id) throws EntityNotFoundException {
+    public String deletePersonById(@PathVariable("id") Integer id) throws EntityNotFoundException {
 
        teacherService.deleteUserById(id);
        return "Se ha eliminado el usuario con el id: " + id;

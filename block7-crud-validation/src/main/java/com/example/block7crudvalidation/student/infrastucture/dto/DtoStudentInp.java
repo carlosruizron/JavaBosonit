@@ -11,6 +11,5 @@ public class DtoStudentInp implements Serializable {
     private Integer id_person;
     private int num_hours_week;
     private String comments;
-    private Integer id_teacher;
     private String branch;
 }

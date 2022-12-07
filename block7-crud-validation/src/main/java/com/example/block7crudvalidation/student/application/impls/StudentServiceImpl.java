@@ -27,7 +27,7 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public DtoStudentOut updateStudent(String id, DtoStudentInp dtoStudentInp) throws EntityNotFoundException {
+    public DtoStudentOut updateStudent(Integer id, DtoStudentInp dtoStudentInp) throws EntityNotFoundException {
 
         Student student = studentRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("El usuario con el id " + id + " no se encuentra"));
         student.update(dtoStudentInp);
@@ -36,9 +36,8 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public DtoStudentOut readById(String id) throws EntityNotFoundException {
-        Student student = studentRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("No se ha encontrado el usuario con el id " + id));
-       return new DtoStudentOut(student);
+    public Student readById(Integer id) throws EntityNotFoundException {
+       return  studentRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("No student found with id: " + id));
     }
 
     @Override
@@ -52,10 +51,40 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public void deleteUserById(String id) throws EntityNotFoundException {
+    public void deleteUserById(Integer id) throws EntityNotFoundException {
 
         Student student = studentRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("No ha ningún usuario con esta id: " + id));
            studentRepository.delete(student);
 
     }
+
+    @Override
+    public List<Student> readEveryStudent() {
+        List<Student> allStudent = new ArrayList<>();
+        studentRepository.findAll().forEach(student -> allStudent.add(student));
+        return allStudent;
+    }
+
+    @Override
+    public Boolean filterByID(List<Student> list, Integer id) {
+        List<Student> studentResult = new ArrayList<>();
+        list.stream().filter(Student -> Student.getPerson().getId_person() == id).forEach(student -> studentResult.add(student));
+        return (studentResult.size() > 0);
+    }
+
+    //Una vez pasado el if, devolvemos el Student indicado con la ID exigida
+    @Override
+    public Student getById(List<Student> list, Integer id) {
+        List<Student> studentRecover= new ArrayList<>();
+        list.stream().filter(Student -> Student.getPerson().getId_person() == id).forEach(student -> studentRecover.add(student));
+        return studentRecover.get(0);
+    }
+
+//    @Override
+//    public Boolean filterByStudent(List<Student> list) {
+//        List<Student> studentResult = new ArrayList<>();
+//        list.stream().filter(Student -> Student.getPerson().getId_person() != null).forEach(student -> studentResult.add(student));
+//        return (studentResult.size() > 0);
+//    }
+
 }

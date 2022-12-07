@@ -3,7 +3,7 @@ package com.example.block7crudvalidation.subject.domain;
 import com.example.block7crudvalidation.student.domain.Student;
 import com.example.block7crudvalidation.subject.infrastucture.dto.DtoSubjectInp;
 import com.example.block7crudvalidation.teacher.domain.Teacher;
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -57,13 +57,12 @@ public class Subject {
 
     public void update(@NotNull DtoSubjectInp dtoSubjectInp) {
 
+        setSubject(dtoSubjectInp.getSubject());
         setComments(dtoSubjectInp.getComments());
         if(dtoSubjectInp.getInitial_date() != null) {
             setInitial_date(dtoSubjectInp.getInitial_date());
         }
         setFinish_date(dtoSubjectInp.getFinish_date());
-        student.setId_student(dtoSubjectInp.getId_student());
-        teacher.setId_teacher(dtoSubjectInp.getId_teacher());
     }
 
 

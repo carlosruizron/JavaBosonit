@@ -58,4 +58,11 @@ public class SubjectServiceImpl implements SubjectService {
         subjectRepository.delete(subject);
 
     }
+
+    @Override
+    public List<Subject> readEverySubject() {
+        List<Subject> subjectRecover = new ArrayList<>();
+        subjectRepository.findAll().forEach(subject -> subjectRecover.add(subject));
+        return subjectRecover;
+    }
 }

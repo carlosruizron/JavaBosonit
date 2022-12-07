@@ -3,13 +3,11 @@ package com.example.block7crudvalidation.teacher.domain;
 import com.example.block7crudvalidation.exception.UnprocessableEntityException;
 import com.example.block7crudvalidation.person.domain.Person;
 import com.example.block7crudvalidation.teacher.infrastucture.dto.DtoTeacherInp;
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.Date;
+import javax.persistence.*;
 
 @Data
 @Entity
@@ -20,7 +18,7 @@ public class Teacher {
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue
     Integer id_teacher;
 
     @OneToOne
@@ -49,7 +47,6 @@ public class Teacher {
         if(dtoTeacherInp.getBranch() != null) {
             setBranch(dtoTeacherInp.getBranch());
         }
-        person.setId_person(dtoTeacherInp.getId_person());
     }
 
 

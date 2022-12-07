@@ -1,10 +1,8 @@
 package com.example.block7crudvalidation.person.infrastucture.dto;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
+import javax.persistence.*;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+
 
 import java.io.Serializable;
 import java.util.Date;

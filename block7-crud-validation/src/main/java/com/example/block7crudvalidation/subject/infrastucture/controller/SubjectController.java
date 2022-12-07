@@ -2,12 +2,16 @@ package com.example.block7crudvalidation.subject.infrastucture.controller;
 
 import com.example.block7crudvalidation.exception.EntityNotFoundException;
 import com.example.block7crudvalidation.exception.UnprocessableEntityException;
+import com.example.block7crudvalidation.student.application.impls.StudentServiceImpl;
+import com.example.block7crudvalidation.student.domain.Student;
 import com.example.block7crudvalidation.subject.application.impls.SubjectServiceImpl;
+import com.example.block7crudvalidation.subject.domain.Subject;
 import com.example.block7crudvalidation.subject.infrastucture.dto.DtoSubjectInp;
 import com.example.block7crudvalidation.subject.infrastucture.dto.DtoSubjectOut;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -16,6 +20,9 @@ public class SubjectController {
 
     @Autowired
     SubjectServiceImpl subjectService;
+
+    @Autowired
+    StudentServiceImpl studentService;
 
     @PostMapping
     public DtoSubjectOut createSubject (@RequestBody DtoSubjectInp dtoSubjectInp) throws UnprocessableEntityException {
@@ -47,5 +54,16 @@ public class SubjectController {
 
        subjectService.deleteUserById(id);
        return "Se ha eliminado el usuario con el id: " + id;
+    }
+
+    @GetMapping("/student/{id}")
+    public List<Subject> readByStudentId(@PathVariable("id") Integer id) throws Exception {
+        List<Subject> subjectsResult = new ArrayList<>();
+        List<Subject> listSubjects;
+
+        Student student = studentService.readById(id);
+        listSubjects = subjectService.readEverySubject();
+        listSubjects.stream().filter(Subject -> Subject.getStudent().getId_student() == id).forEach(subject -> subjectsResult.add(subject));
+        return subjectsResult;
     }
 }

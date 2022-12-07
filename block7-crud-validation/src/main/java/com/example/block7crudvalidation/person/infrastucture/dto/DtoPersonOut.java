@@ -2,10 +2,12 @@ package com.example.block7crudvalidation.person.infrastucture.dto;
 
 import com.example.block7crudvalidation.person.domain.Person;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
 @Data
+@NoArgsConstructor
 public class DtoPersonOut {
 
     private Integer id_person;

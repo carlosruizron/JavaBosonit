@@ -1,8 +1,8 @@
 package com.example.block7crudvalidation.subject.infrastucture.dto;
 
-import jakarta.validation.constraints.NotEmpty;
-import lombok.Data;
 
+import lombok.Data;
+import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
 import java.util.Date;
 
