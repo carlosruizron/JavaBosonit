@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>block10-dockerize-app</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1</version>
 	<name>block10-dockerize-app</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
@@ -32,8 +32,8 @@
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
