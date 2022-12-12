@@ -89,6 +89,7 @@ public class PersonController {
         return personService.getByName(name);
     }
 
+    @CrossOrigin(origins = "https://cdpn.io")
     @PutMapping(value="/{id}")
     public DtoPersonOut updatePerson(@PathVariable("id") Integer id, @RequestBody DtoPersonInp dtoPersonInp){
 
