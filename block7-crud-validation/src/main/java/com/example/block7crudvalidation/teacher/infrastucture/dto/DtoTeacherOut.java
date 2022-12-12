@@ -4,8 +4,6 @@ import com.example.block7crudvalidation.teacher.domain.Teacher;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
-
 @Data
 @NoArgsConstructor
 public class DtoTeacherOut {
@@ -18,7 +16,9 @@ public class DtoTeacherOut {
     public DtoTeacherOut(Teacher teacher) {
 
         setId_teacher(teacher.getId_teacher());
+//        System.out.println(teacher.getId_teacher());
         setId_person(teacher.getPerson().getId_person());
+        System.out.println(teacher.getPerson().getId_person());
         setComments(teacher.getComments());
         setBranch(teacher.getBranch());
     }

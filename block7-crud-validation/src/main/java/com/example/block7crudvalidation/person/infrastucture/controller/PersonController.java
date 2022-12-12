@@ -43,6 +43,13 @@ public class PersonController {
         return personService.createPerson(dtoPersonInp);
     }
 
+    @CrossOrigin(origins = "https://cdpn.io")
+    @GetMapping
+    public List<DtoPersonOut> getAll() {
+        return personService.getAll();
+    }
+
+    @CrossOrigin(origins = "https://cdpn.io")
     @GetMapping(value="/{id}")
     public DtoPersonOut getById(@PathVariable(name="id") Integer id, @RequestParam(name = "outputType", defaultValue = "simple") String type) throws EntityNotFoundException {
 
@@ -95,10 +102,11 @@ public class PersonController {
        return "Se ha eliminado el usuario con el id: " + id;
     }
 
+//    Feign
     @GetMapping("/teacher/{id}")
-    public DtoTeacherOut getTeacherById(@PathVariable("id") Integer id) {
-        DtoTeacherOutFull dtoTeacherOut = new DtoTeacherOutFull(feignServer.readTeacherById(id));
-
-        return dtoTeacherOut;
+    public DtoTeacherPerson getTeacherById(@PathVariable("id") Integer id) {
+        DtoTeacherPerson dtoTeacherPerson = new DtoTeacherPerson(feignServer.readTeacherById(id));
+        System.out.println(dtoTeacherPerson.getId_person());
+        return dtoTeacherPerson;
     }
 }

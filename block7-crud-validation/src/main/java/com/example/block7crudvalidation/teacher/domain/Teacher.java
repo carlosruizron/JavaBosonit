@@ -36,9 +36,10 @@ public class Teacher {
         setComments(dtoTeacherInp.getComments());
         if(dtoTeacherInp.getBranch() != null) {
             setBranch(dtoTeacherInp.getBranch());
+        }else {
+
         }
         person.setId_person(dtoTeacherInp.getId_person());
-
     }
 
     public void update(@NotNull DtoTeacherInp dtoTeacherInp) {
