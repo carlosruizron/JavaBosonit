@@ -106,8 +106,8 @@ public class PersonController {
 //    Feign
     @GetMapping("/teacher/{id}")
     public DtoTeacherPerson getTeacherById(@PathVariable("id") Integer id) {
-        DtoTeacherPerson dtoTeacherPerson = new DtoTeacherPerson(feignServer.readTeacherById(id));
-        System.out.println(dtoTeacherPerson.getId_person());
-        return dtoTeacherPerson;
+//        DtoTeacherPerson dtoTeacherPerson = new DtoTeacherPerson(feignServer.readTeacherById(id));
+//        System.out.println(dtoTeacherPerson.getId_person());
+        return feignServer.readTeacherById(id, "full");
     }
 }
