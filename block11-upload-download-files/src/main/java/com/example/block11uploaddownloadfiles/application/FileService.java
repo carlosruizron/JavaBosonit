@@ -8,8 +8,9 @@ public interface FileService {
 
     String createFile(File file);
     String updateFile(File file);
-    File readById(Integer idFile);
-    File readByName(String name);
+    File getById(Integer idFile);
+    List<File> getByName(String name);
     List<File> readAll();
     void deleteFile(Integer idFile);
+    List<File> getFileByType(String type);
 }

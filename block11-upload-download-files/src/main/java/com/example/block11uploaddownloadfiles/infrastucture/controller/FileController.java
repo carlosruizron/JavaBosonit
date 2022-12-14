@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -22,7 +23,7 @@ public class FileController {
     @Autowired
     FileServiceImpls fileServiceImpl;
 
-    String pathDownload = "src/main/java/com/example/block11uploaddownloadfiles/downloads/";
+    final String pathDownload = "src/main/java/com/example/block11uploaddownloadfiles/downloads/";
 
     @PostMapping(value = "/upload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public File uploadFile(@RequestPart MultipartFile multipartFile) throws IOException {
@@ -36,15 +37,15 @@ public class FileController {
     }
 
     @GetMapping("/{id}")
-    public File downloadFile(@PathVariable("id") int fileId) {
+    public File getById(@PathVariable("id") Integer fileId) {
 
-        return fileServiceImpl.readById(fileId);
+        return fileServiceImpl.getById(fileId);
     }
 
     @GetMapping("/downloadById/{id}")
-    public String downloadFileById(@PathVariable("id") int fileId) throws IOException {
+    public String downloadFileById(@PathVariable("id") Integer fileId) throws IOException {
 
-        File file = fileServiceImpl.readById(fileId);
+        File file = fileServiceImpl.getById(fileId);
         Path path = Paths.get(pathDownload + file.getFilename());
         Files.write(path, file.getData());
         return "Se ha descargado correctamente";
@@ -53,23 +54,25 @@ public class FileController {
     @GetMapping("/downloadByName/{name}")
     public String downloadByName(@PathVariable("name") String name) throws IOException {
 
-        File file = fileServiceImpl.readByName(name);
-        Path path = Paths.get(pathDownload + file.getFilename());
-        Files.write(path, file.getData());
+        List<File> file = new ArrayList<>();
+        file = fileServiceImpl.getByName(name);
+        Path path = Paths.get(pathDownload + file.get(0).getFilename());
+        Files.write(path, file.get(0).getData());
         return "Se ha descargado correctamente";
     }
 
     @GetMapping("/download/path/{name}")
-    public String downloadByName(@PathVariable("name") String name, @RequestParam(name="setPath", defaultValue = "src/main/java/com/example/block11uploaddownloadfiles/downloads/") String url) throws IOException {
+    public String downloadByName(@PathVariable("name") String name, @RequestParam(name="setPath", defaultValue = pathDownload) String url) throws IOException {
 
-        File file = fileServiceImpl.readByName(name);
-        Path path = Paths.get(("src/main/java/com/example/block11uploaddownloadfiles/" + url + "/") + file.getFilename());
+        List<File> file = new ArrayList<>();
+        file = fileServiceImpl.getByName(name);
+        Path path = Paths.get(("src/main/java/com/example/block11uploaddownloadfiles/" + url + "/") + file.get(0).getFilename());
         if (Files.notExists(path)) {
             Files.createDirectories(Paths.get("src/main/java/com/example/block11uploaddownloadfiles/" + url + "/"));
-            Files.write(path, file.getData());
+            Files.write(path, file.get(0).getData());
             return "Se ha descargado correctamente";
         }else {
-            Files.write(path, file.getData());
+            Files.write(path, file.get(0).getData());
             return "Se ha descargado correctamente";
         }
 
@@ -77,11 +80,15 @@ public class FileController {
 
     @GetMapping
     public List<File> readAll(){
+
         List<File> listFile = fileServiceImpl.readAll();
         return listFile;
     }
 
+    @GetMapping("/readByType")
+    public List<File> readByType(@RequestParam(name="type", defaultValue = "") String type) {
 
-
-
+        List<File> file = fileServiceImpl.getFileByType(type);
+        return file;
+    }
 }
