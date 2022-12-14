@@ -44,32 +44,32 @@ public class FileController {
     @GetMapping("/downloadById/{id}")
     public String downloadFileById(@PathVariable("id") int fileId) throws IOException {
 
-        File recoveredFile = fileServiceImpl.readById(fileId);
-        Path path = Paths.get(pathDownload + recoveredFile.getFilename());
-        Files.write(path, recoveredFile.getData());
+        File file = fileServiceImpl.readById(fileId);
+        Path path = Paths.get(pathDownload + file.getFilename());
+        Files.write(path, file.getData());
         return "Se ha descargado correctamente";
     }
 
     @GetMapping("/downloadByName/{name}")
     public String downloadByName(@PathVariable("name") String name) throws IOException {
 
-        File recoveredFile = fileServiceImpl.readByName(name);
-        Path path = Paths.get(pathDownload + recoveredFile.getFilename());
-        Files.write(path, recoveredFile.getData());
+        File file = fileServiceImpl.readByName(name);
+        Path path = Paths.get(pathDownload + file.getFilename());
+        Files.write(path, file.getData());
         return "Se ha descargado correctamente";
     }
 
     @GetMapping("/download/path/{name}")
     public String downloadByName(@PathVariable("name") String name, @RequestParam(name="setPath", defaultValue = "src/main/java/com/example/block11uploaddownloadfiles/downloads/") String url) throws IOException {
 
-        File recoveredFile = fileServiceImpl.readByName(name);
-        Path path = Paths.get(("src/main/java/com/example/block11uploaddownloadfiles/" + url + "/") + recoveredFile.getFilename());
+        File file = fileServiceImpl.readByName(name);
+        Path path = Paths.get(("src/main/java/com/example/block11uploaddownloadfiles/" + url + "/") + file.getFilename());
         if (Files.notExists(path)) {
             Files.createDirectories(Paths.get("src/main/java/com/example/block11uploaddownloadfiles/" + url + "/"));
-            Files.write(path, recoveredFile.getData());
+            Files.write(path, file.getData());
             return "Se ha descargado correctamente";
         }else {
-            Files.write(path, recoveredFile.getData());
+            Files.write(path, file.getData());
             return "Se ha descargado correctamente";
         }
 
@@ -77,8 +77,8 @@ public class FileController {
 
     @GetMapping
     public List<File> readAll(){
-        List<File> listReturn = fileServiceImpl.readAll();
-        return listReturn;
+        List<File> listFile = fileServiceImpl.readAll();
+        return listFile;
     }
 
 
