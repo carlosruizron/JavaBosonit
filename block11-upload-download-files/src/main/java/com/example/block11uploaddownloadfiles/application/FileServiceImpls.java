@@ -22,10 +22,10 @@ public class FileServiceImpls implements FileService{
     }
 
     @Override
-    public String updateFile(File file) {
+    public File updateFile(File file) {
 
         fileRepository.save(file);
-        return "El archivo: " + file.getId_file() + " ha sido actualizado";
+        return file;
     }
 
     @Override

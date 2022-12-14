@@ -36,10 +36,23 @@ public class FileController {
         return file;
     }
 
-    @GetMapping("/{id}")
-    public File getById(@PathVariable("id") Integer fileId) {
+    @PutMapping("/{id}")
+    public File updateFile(@RequestBody File file, @PathVariable("id") Integer id) {
 
-        return fileServiceImpl.getById(fileId);
+        return fileServiceImpl.updateFile(file);
+    }
+
+    @GetMapping("/id/{id}")
+    public File getById(@PathVariable("id") Integer id) {
+
+        return fileServiceImpl.getById(id);
+    }
+
+    @GetMapping("/name/{name}")
+    public List<File> getByName(@PathVariable("name") String name) {
+
+        List<File> file= fileServiceImpl.getByName(name);
+        return file;
     }
 
     @GetMapping("/downloadById/{id}")

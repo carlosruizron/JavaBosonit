@@ -7,7 +7,7 @@ import java.util.List;
 public interface FileService {
 
     String createFile(File file);
-    String updateFile(File file);
+    File updateFile(File file);
     File getById(Integer idFile);
     List<File> getByName(String name);
     List<File> readAll();
