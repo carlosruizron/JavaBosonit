@@ -101,7 +101,7 @@ public class FileController {
     @GetMapping("/readByType")
     public List<File> readByType(@RequestParam(name="type", defaultValue = "") String type) {
 
-        List<File> file = fileServiceImpl.getFileByType(type);
-        return file;
+        List<File> files = fileServiceImpl.getFileByType(type);
+        return files;
     }
 }
