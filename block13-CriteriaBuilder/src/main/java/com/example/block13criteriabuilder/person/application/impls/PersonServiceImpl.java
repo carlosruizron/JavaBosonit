@@ -29,6 +29,7 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     public DtoPersonOut createPerson(DtoPersonInp dtoPersonInp) throws UnprocessableEntityException {
+
         Person person = new Person(dtoPersonInp);
         personRepository.save(person);
         return new DtoPersonOut(person);

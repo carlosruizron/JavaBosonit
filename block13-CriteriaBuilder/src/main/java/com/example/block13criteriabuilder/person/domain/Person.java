@@ -120,6 +120,7 @@ public class Person {
         if (dtoPersonInp.getImage_url() != null) {
             setImage_url(dtoPersonInp.getImage_url());
         }
+        setCreated_date(dtoPersonInp.getCreated_date());
     }
 
     public Person(Person person) {
