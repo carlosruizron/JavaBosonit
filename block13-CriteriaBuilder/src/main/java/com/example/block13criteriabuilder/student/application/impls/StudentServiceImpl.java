@@ -68,7 +68,7 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public Boolean filterByID(List<Student> list, Integer id) {
         List<Student> studentResult = new ArrayList<>();
-        list.stream().filter(Student -> Student.getPerson().getId_person() == id).forEach(student -> studentResult.add(student));
+        list.stream().filter(Student -> Student.getPerson().getIdPerson() == id).forEach(student -> studentResult.add(student));
         return (studentResult.size() > 0);
     }
 
@@ -76,7 +76,7 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public Student getById(List<Student> list, Integer id) {
         List<Student> studentRecover= new ArrayList<>();
-        list.stream().filter(Student -> Student.getPerson().getId_person() == id).forEach(student -> studentRecover.add(student));
+        list.stream().filter(Student -> Student.getPerson().getIdPerson() == id).forEach(student -> studentRecover.add(student));
         return studentRecover.get(0);
     }
 

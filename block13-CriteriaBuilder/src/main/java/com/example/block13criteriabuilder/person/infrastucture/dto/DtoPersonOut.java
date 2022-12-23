@@ -25,7 +25,7 @@ public class DtoPersonOut {
 
     public DtoPersonOut(Person person) {
 
-        setId_person(person.getId_person());
+        setId_person(person.getIdPerson());
         setUsername(person.getUsername());
         setPassword(person.getPassword());
         setName(person.getName());

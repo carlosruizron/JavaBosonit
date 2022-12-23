@@ -17,8 +17,8 @@ public class DtoTeacherOut {
 
         setId_teacher(teacher.getId_teacher());
 //        System.out.println(teacher.getId_teacher());
-        setId_person(teacher.getPerson().getId_person());
-        System.out.println(teacher.getPerson().getId_person());
+        setId_person(teacher.getPerson().getIdPerson());
+        System.out.println(teacher.getPerson().getIdPerson());
         setComments(teacher.getComments());
         setBranch(teacher.getBranch());
     }

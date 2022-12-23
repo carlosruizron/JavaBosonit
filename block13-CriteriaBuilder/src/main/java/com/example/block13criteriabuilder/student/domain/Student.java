@@ -38,7 +38,7 @@ public class Student {
         setNum_hours_week(dtoStudentInp.getNum_hours_week());
         setComments(dtoStudentInp.getComments());
         setBranch(dtoStudentInp.getBranch());
-        person.setId_person(dtoStudentInp.getId_person());
+        person.setIdPerson(dtoStudentInp.getId_person());
     }
 
     public void update(@NotNull DtoStudentInp dtoStudentInp) {

@@ -20,7 +20,7 @@ public class Person {
 
     @Id
     @GeneratedValue
-    Integer id_person;
+    Integer idPerson;
 
     @Column
     String username;
@@ -124,7 +124,7 @@ public class Person {
     }
 
     public Person(Person person) {
-        this.setId_person(person.getId_person());
+        this.setIdPerson(person.getIdPerson());
         this.setUsername(person.getUsername());
         this.setPassword(person.getPassword());
         this.setName(person.getName());

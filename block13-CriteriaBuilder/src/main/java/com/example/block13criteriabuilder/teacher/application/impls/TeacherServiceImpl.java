@@ -63,19 +63,19 @@ public class TeacherServiceImpl implements TeacherService {
     @Override
     public Boolean filterByID(List<Teacher> list, Integer id) {
         List<Teacher> teacherResult = new ArrayList<>();
-        list.stream().filter(Teacher -> Teacher.getPerson().getId_person() == id).forEach(teacher -> teacherResult.add(teacher));
+        list.stream().filter(Teacher -> Teacher.getPerson().getIdPerson() == id).forEach(teacher -> teacherResult.add(teacher));
         return (teacherResult.size() != 0);
     }
     @Override
     public Teacher getById(List<Teacher> list, Integer id) {
         List<Teacher> teacherRecover = new ArrayList<>();
-        list.stream().filter(Teacher -> Teacher.getPerson().getId_person() == id).forEach(teacher -> teacherRecover.add(teacher));
+        list.stream().filter(Teacher -> Teacher.getPerson().getIdPerson() == id).forEach(teacher -> teacherRecover.add(teacher));
         return teacherRecover.get(0);
     }
     @Override
     public Boolean filterByTeacher(List<Teacher> list) {
         List<Teacher> teacherResult = new ArrayList<>();
-        list.stream().filter(Teacher -> Teacher.getPerson().getId_person() != null).forEach(teacher -> teacherResult.add(teacher));
+        list.stream().filter(Teacher -> Teacher.getPerson().getIdPerson() != null).forEach(teacher -> teacherResult.add(teacher));
         return (teacherResult.size() > 0);
     }
 }

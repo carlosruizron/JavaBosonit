@@ -39,7 +39,7 @@ public class Teacher {
         }else {
 
         }
-        person.setId_person(dtoTeacherInp.getId_person());
+        person.setIdPerson(dtoTeacherInp.getId_person());
     }
 
     public void update(@NotNull DtoTeacherInp dtoTeacherInp) {

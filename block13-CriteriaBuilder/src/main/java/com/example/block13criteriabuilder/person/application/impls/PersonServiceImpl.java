@@ -10,6 +10,8 @@ import com.example.block13criteriabuilder.exception.EntityNotFoundException;
 import com.example.block13criteriabuilder.student.application.StudentRepository;
 import com.example.block13criteriabuilder.teacher.application.TeacherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -61,13 +63,9 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
-    public List<DtoPersonOut> getAll() {
-        List<DtoPersonOut> list = new ArrayList<>();
-        personRepository.findAll().forEach(person -> {
-            DtoPersonOut dtoPersonOut = new DtoPersonOut(person);
-            list.add(dtoPersonOut);
-        });
-        return list;
+    public Page<Person> getAll(Pageable pageable) {
+
+        return personRepository.findAll(pageable);
     }
 
 
@@ -78,23 +76,5 @@ public class PersonServiceImpl implements PersonService {
            personRepository.delete(person);
 
     }
-
-//        public List<Student> getPersonStudent() {
-//        List<Student> list = new ArrayList<>();
-//        studentRepository.findAll().forEach(student -> {
-//            list.add(student);
-//        });
-//        return list;
-//    }
-//
-//    public List<DtoTeacherPerson> getPersonTeacher() {
-//        List<DtoTeacherPerson> list = new ArrayList<>();
-//        teacherRepository.findAll().forEach(teacher -> {
-//            DtoTeacherPerson dtoTeacherPerson = new DtoTeacherPerson(teacher);
-//            list.add(dtoTeacherPerson);
-//        });
-//        return list;
-//    }
-
 
 }

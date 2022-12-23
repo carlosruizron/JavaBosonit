@@ -51,7 +51,7 @@ public class DtoStudentPerson extends DtoPersonOut{
         setComments(student.getComments());
         setBranch(student.getBranch());
         //Parte de Persona
-        setId_person(student.getPerson().getId_person());
+        setId_person(student.getPerson().getIdPerson());
         setUsername(student.getPerson().getUsername());
         setPassword(student.getPerson().getPassword());
         setName(student.getPerson().getName());
@@ -73,7 +73,7 @@ public class DtoStudentPerson extends DtoPersonOut{
         setComments(student.getComments());
         setBranch(student.getBranch());
         //Parte de Persona
-        setId_person(student.getPerson().getId_person());
+        setId_person(student.getPerson().getIdPerson());
         setUsername(student.getPerson().getUsername());
         setPassword(student.getPerson().getPassword());
         setName(student.getPerson().getName());

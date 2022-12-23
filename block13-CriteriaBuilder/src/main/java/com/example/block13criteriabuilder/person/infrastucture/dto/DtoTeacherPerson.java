@@ -51,7 +51,7 @@ public class DtoTeacherPerson  extends DtoPersonOut{
         setBranch(teacher.getBranch());
 
         //Parte de Persona
-        setId_person(teacher.getPerson().getId_person());
+        setId_person(teacher.getPerson().getIdPerson());
         setUsername(teacher.getPerson().getUsername());
         setPassword(teacher.getPerson().getPassword());
         setName(teacher.getPerson().getName());
@@ -74,7 +74,7 @@ public class DtoTeacherPerson  extends DtoPersonOut{
         setBranch(teacher.getBranch());
 
         //Parte de Persona
-        setId_person(teacher.getPerson().getId_person());
+        setId_person(teacher.getPerson().getIdPerson());
         setUsername(teacher.getPerson().getUsername());
         setPassword(teacher.getPerson().getPassword());
         setName(teacher.getPerson().getName());

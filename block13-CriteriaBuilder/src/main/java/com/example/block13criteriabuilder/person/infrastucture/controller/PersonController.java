@@ -3,6 +3,7 @@ package com.example.block13criteriabuilder.person.infrastucture.controller;
 import com.example.block13criteriabuilder.exception.UnprocessableEntityException;
 import com.example.block13criteriabuilder.feign.FeignServer;
 import com.example.block13criteriabuilder.person.application.PersonRepositoryImpl;
+import com.example.block13criteriabuilder.person.domain.Person;
 import com.example.block13criteriabuilder.person.infrastucture.dto.DtoPersonInp;
 import com.example.block13criteriabuilder.person.application.interfaces.PersonService;
 import com.example.block13criteriabuilder.person.infrastucture.dto.DtoPersonOut;
@@ -14,6 +15,8 @@ import com.example.block13criteriabuilder.student.domain.Student;
 import com.example.block13criteriabuilder.teacher.application.interfaces.TeacherService;
 import com.example.block13criteriabuilder.teacher.domain.Teacher;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.List;
@@ -45,8 +48,9 @@ public class PersonController {
 
     @CrossOrigin(origins = "https://cdpn.io")
     @GetMapping
-    public List<DtoPersonOut> getAll() {
-        return personService.getAll();
+    public Page<Person> getAll(Pageable pageable) {
+
+        return personService.getAll(pageable);
     }
 
     @CrossOrigin(origins = "https://cdpn.io")
@@ -112,9 +116,7 @@ public class PersonController {
 //    CriteriaBuilder
 
     @GetMapping("/personQuery")
-    public Iterable<DtoPersonOut> getPersonByCriteria(@RequestParam(required = false) String Type, @RequestParam HashMap<String, String> conditions) {
-
-        HashMap<String, String> data = new HashMap<>();
+    public List<DtoPersonOut> getPersonByCriteria(@RequestParam HashMap<String, String> conditions) {
 
         return personRepositoryImpl.getPersonQuery(conditions);
     }

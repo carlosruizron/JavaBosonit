@@ -34,16 +34,16 @@ public class PersonRepositoryImpl {
                     predicates.add(cb.like(root.get(filed),
                             "%" + (String) value + "%"));
                     break;
-                case "dateGT":
+                case "dateGreaterThan":
                     try {
-                        predicates.add(cb.greaterThan(root.get("created_date"),new SimpleDateFormat("dd-mm-yyyy").parse(value)));
+                        predicates.add(cb.greaterThan(root.get("created_date"),new SimpleDateFormat("yyyy-mm-dd").parse(value)));
                     } catch (ParseException e) {
                         throw new RuntimeException(e);
                     }
                     break;
-                case "dateLT":
+                case "dateLessThan":
                     try {
-                        predicates.add(cb.lessThan(root.get("created_date"), new SimpleDateFormat("dd-mm-yyyy").parse(value)));
+                        predicates.add(cb.lessThan(root.get("created_date"), new SimpleDateFormat("yyyy-mm-dd").parse(value)));
                     } catch (ParseException e) {
                         throw new RuntimeException(e);
                     }

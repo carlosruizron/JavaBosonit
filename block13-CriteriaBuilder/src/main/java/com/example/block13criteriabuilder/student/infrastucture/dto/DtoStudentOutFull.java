@@ -25,7 +25,7 @@ public class DtoStudentOutFull extends DtoStudentOut{
 
     public DtoStudentOutFull(Student student) {
         super(student);
-        setIdPerson(student.getPerson().getId_person());
+        setIdPerson(student.getPerson().getIdPerson());
         setUsername(student.getPerson().getUsername());
         setName(student.getPerson().getName());
         setSurname(student.getPerson().getSurname());
