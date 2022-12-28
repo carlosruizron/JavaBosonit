@@ -1,4 +1,4 @@
-package com.example.block13mongodb.infrastructure.controller;
+package com.example.block13mongodb.infrastructure;
 
 import com.example.block13mongodb.domain.Person;
 import org.springframework.beans.factory.annotation.Autowired;
