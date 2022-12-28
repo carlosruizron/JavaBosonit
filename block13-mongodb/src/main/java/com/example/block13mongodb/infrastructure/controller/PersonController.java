@@ -2,8 +2,11 @@ package com.example.block13mongodb.infrastructure.controller;
 
 import com.example.block13mongodb.domain.Person;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.data.mongodb.core.query.Query;
 import java.util.List;
@@ -14,6 +17,9 @@ public class PersonController {
 
     @Autowired
     MongoTemplate mongoTemplate;
+
+    @Autowired
+    MongoRepository mongoRepository;
 
     @PostMapping
     public Person createPerson(@RequestBody Person person) {
@@ -29,15 +35,9 @@ public class PersonController {
     }
 
     @GetMapping
-    public List<Person> getAll() {
+    public Page<Person> getAll(Pageable pageable) {
 
-        int pageSize = 1;
-        int pageNumber= 2;
-
-        Query query = new Query();
-        query.skip(pageNumber * pageSize);
-        query.limit(pageSize);
-        return mongoTemplate.find(query, Person.class);
+        return mongoRepository.findAll(pageable);
     }
 
     @GetMapping("/{id}")
