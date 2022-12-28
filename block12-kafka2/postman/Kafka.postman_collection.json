@@ -1,0 +1,47 @@
+{
+	"info": {
+		"_postman_id": "f762c610-5c30-409b-8b4f-474c2056e288",
+		"name": "Kafka",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Kafka2-Kafka",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:9090/send/Hola",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"send",
+						"Hola"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Kafka-Kafka2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/send/Que tal",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"send",
+						"Que tal"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

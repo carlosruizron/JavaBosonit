@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "9d347358-6db8-4f0c-98b4-3be40ad03b21",
+		"name": "CriteriaBuilder",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetByDate",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/person/personQuery?dateGT=15-05-1999&dateLT=15-02-2000",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"person",
+						"personQuery"
+					],
+					"query": [
+						{
+							"key": "dateGT",
+							"value": "15-05-1999"
+						},
+						{
+							"key": "dateLT",
+							"value": "15-02-2000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetByName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/person/personQuery/?name=Carlos",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"person",
+						"personQuery",
+						""
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Carlos"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBySurname",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/person/personQuery/?surname=Quero",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"person",
+						"personQuery",
+						""
+					],
+					"query": [
+						{
+							"key": "surname",
+							"value": "Quero"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
