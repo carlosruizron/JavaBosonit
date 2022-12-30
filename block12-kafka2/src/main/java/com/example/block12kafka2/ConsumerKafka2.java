@@ -6,8 +6,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ConsumerKafka2 {
-    @Autowired
-    ProducerKafka2 producer;
 
     @KafkaListener(topics = "topic", groupId = "group_id")
     public void receiveMessage(String message) {
