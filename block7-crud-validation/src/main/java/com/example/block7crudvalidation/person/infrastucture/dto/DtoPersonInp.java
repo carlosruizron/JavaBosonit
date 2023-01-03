@@ -1,26 +1,33 @@
 package com.example.block7crudvalidation.person.infrastucture.dto;
 
 import javax.persistence.*;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 import java.io.Serializable;
 import java.util.Date;
 
+@NoArgsConstructor
+@AllArgsConstructor
 @Data
+@Builder
 public class DtoPersonInp implements Serializable {
 
-    private Integer id_person;
+     Integer id_person;
 
-    private String username;
-    private String password;
-    private String name;
-    private String surname;
-    private String company_email;
-    private String personal_email;
-    private String city;
-    private Boolean active;
-    private Date created_date;
-    private String image_url;
-    private Date termination_date;
+     String username;
+     String password;
+     String name;
+     String surname;
+     String company_email;
+     String personal_email;
+     String city;
+     Boolean active;
+     Date created_date;
+     String image_url;
+     Date termination_date;
 }
