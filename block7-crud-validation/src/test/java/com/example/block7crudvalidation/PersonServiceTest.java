@@ -22,7 +22,7 @@ import static org.mockito.ArgumentMatchers.any;
 class ControllerPersonTest {
 
     @Mock
-    private PersonRepository personRepository;
+    PersonRepository personRepository;
 
     @InjectMocks
     PersonServiceImpl personService;
@@ -42,9 +42,8 @@ class ControllerPersonTest {
                 .city("Malaga")
                 .active(true)
                 .created_date(new Date())
-//                .termination_date(new SimpleDateFormat("2076-10-10"))
-                .image_url("http://www.holaquepasa.com")
-                .password("gimmeMoreChrome")
+                .image_url("http://www.img.com")
+                .password("123456")
                 .build();
     }
 
