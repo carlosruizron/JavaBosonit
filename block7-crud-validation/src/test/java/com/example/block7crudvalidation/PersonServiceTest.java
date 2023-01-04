@@ -49,7 +49,6 @@ class ControllerPersonTest {
     }
 
     @Test
-    @Order(1)
     void savePersonTest() {
         when(personRepository.save(any(Person.class))).thenReturn((person));
         assertNotNull(personService.createPerson(dtoPersonInp));
