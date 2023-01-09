@@ -57,7 +57,7 @@ public class DtoTeacherPerson  extends DtoPersonOut{
         setName(teacher.getPerson().getName());
         setSurname(teacher.getPerson().getSurname());
         setCompany_email(teacher.getPerson().getCompany_email());
-        setPersonal_email(teacher.getPerson().getPersonal_email());
+        setPersonal_email(teacher.getPerson().getPersonalEmail());
         setCity(teacher.getPerson().getCity());
         setActive(teacher.getPerson().getActive());
         setCreated_date(teacher.getPerson().getCreated_date());
@@ -80,7 +80,7 @@ public class DtoTeacherPerson  extends DtoPersonOut{
         setName(teacher.getPerson().getName());
         setSurname(teacher.getPerson().getSurname());
         setCompany_email(teacher.getPerson().getCompany_email());
-        setPersonal_email(teacher.getPerson().getPersonal_email());
+        setPersonal_email(teacher.getPerson().getPersonalEmail());
         setCity(teacher.getPerson().getCity());
         setActive(teacher.getPerson().getActive());
         setCreated_date(teacher.getPerson().getCreated_date());

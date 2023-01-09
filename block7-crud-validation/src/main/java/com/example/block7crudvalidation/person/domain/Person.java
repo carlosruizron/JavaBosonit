@@ -37,7 +37,7 @@ public class Person {
     String company_email;
 
     @Column
-    String personal_email;
+    String personalEmail;
 
     @Column
     String city;
@@ -53,6 +53,9 @@ public class Person {
 
     @Column
     Date termination_date;
+
+    @Column
+    private Boolean admin;
 
     public Person(DtoPersonInp dtoPersonInp) throws UnprocessableEntityException {
         if((dtoPersonInp.getUsername() == null) && (dtoPersonInp.getUsername().length() >= 10) && (dtoPersonInp.getUsername().length() <= 6)) {
@@ -75,10 +78,10 @@ public class Person {
         } else {
             setCompany_email(dtoPersonInp.getCompany_email());
         }
-        if (dtoPersonInp.getPersonal_email() == null) {
+        if (dtoPersonInp.getPersonalEmail() == null) {
             throw new UnprocessableEntityException("El email personal no puede ser null");
         } else {
-            setPersonal_email(dtoPersonInp.getPersonal_email());
+            setPersonalEmail(dtoPersonInp.getPersonalEmail());
         }
         if (dtoPersonInp.getCity() == null) {
             throw new UnprocessableEntityException("La ciudad no puede ser null");
@@ -90,6 +93,9 @@ public class Person {
         setCreated_date(new Date());
         setImage_url(dtoPersonInp.getImage_url());
         setTermination_date(dtoPersonInp.getTermination_date());
+        if(dtoPersonInp.getAdmin() == null) {
+            setAdmin(false);
+        }
     }
 
     public void update(@NotNull DtoPersonInp dtoPersonInp) {
@@ -110,8 +116,8 @@ public class Person {
         if (dtoPersonInp.getCompany_email() != null) {
             setCompany_email(dtoPersonInp.getCompany_email());
         }
-        if (dtoPersonInp.getPersonal_email() != null) {
-            setPersonal_email(dtoPersonInp.getPersonal_email());
+        if (dtoPersonInp.getPersonalEmail() != null) {
+            setPersonalEmail(dtoPersonInp.getPersonalEmail());
         }
         if (dtoPersonInp.getCity() != null) {
             setCity(dtoPersonInp.getCity());

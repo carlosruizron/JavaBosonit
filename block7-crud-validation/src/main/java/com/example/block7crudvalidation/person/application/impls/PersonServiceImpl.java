@@ -7,12 +7,8 @@ import com.example.block7crudvalidation.person.infrastucture.dto.DtoPersonInp;
 import com.example.block7crudvalidation.person.domain.Person;
 import com.example.block7crudvalidation.person.infrastucture.dto.DtoPersonOut;
 import com.example.block7crudvalidation.exception.EntityNotFoundException;
-import com.example.block7crudvalidation.person.infrastucture.dto.DtoStudentPerson;
-import com.example.block7crudvalidation.person.infrastucture.dto.DtoTeacherPerson;
 import com.example.block7crudvalidation.student.application.StudentRepository;
-import com.example.block7crudvalidation.student.domain.Student;
 import com.example.block7crudvalidation.teacher.application.TeacherRepository;
-import com.example.block7crudvalidation.teacher.domain.Teacher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -55,6 +51,12 @@ public class PersonServiceImpl implements PersonService {
             list.add(new DtoPersonOut(person));
         });
         return list;
+    }
+
+    @Override
+    public DtoPersonOut getByUsername(String username) throws EntityNotFoundException{
+        Person person = personRepository.findByUsername(username);
+        return new DtoPersonOut(person);
     }
 
     @Override

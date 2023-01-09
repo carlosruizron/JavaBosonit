@@ -10,7 +10,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import static junit.framework.TestCase.assertNotNull;
@@ -19,13 +18,13 @@ import static org.mockito.ArgumentMatchers.any;
 
 @DataJpaTest
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-class ControllerPersonTest {
+class PersonServiceTest {
 
     @Mock
-    PersonRepository personRepository;
+    private PersonRepository personRepository;
 
     @InjectMocks
-    PersonServiceImpl personService;
+    private PersonServiceImpl personService;
 
     Person person;
     DtoPersonInp dtoPersonInp;
@@ -38,7 +37,7 @@ class ControllerPersonTest {
                 .surname("Ruiz")
                 .username("carlosruiz")
                 .company_email("bosonit.com")
-                .personal_email("carlos@bosonit.com")
+                .personalEmail("carlos@bosonit.com")
                 .city("Malaga")
                 .active(true)
                 .created_date(new Date())

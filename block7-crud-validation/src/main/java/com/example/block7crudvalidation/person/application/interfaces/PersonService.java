@@ -17,6 +17,8 @@ public interface PersonService {
     DtoPersonOut createPerson(DtoPersonInp dtoPersonInp) throws UnprocessableEntityException;
     DtoPersonOut updatePerson(Integer id, DtoPersonInp dtoPersonInp);
     List<DtoPersonOut> getByName(String name) throws EntityNotFoundException;
+
+    DtoPersonOut getByUsername(String username) throws EntityNotFoundException;
     DtoPersonOut readById(Integer id) throws EntityNotFoundException;
     List<DtoPersonOut> getAll();
     void deleteUserById(Integer id) throws EntityNotFoundException;

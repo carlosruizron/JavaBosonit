@@ -1,6 +1,5 @@
 package com.example.block7crudvalidation.person.infrastucture.dto;
 
-import javax.persistence.*;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -18,16 +17,16 @@ import java.util.Date;
 public class DtoPersonInp implements Serializable {
 
      Integer id_person;
-
      String username;
      String password;
      String name;
      String surname;
      String company_email;
-     String personal_email;
+     String personalEmail;
      String city;
      Boolean active;
      Date created_date;
      String image_url;
      Date termination_date;
+     Boolean admin;
 }

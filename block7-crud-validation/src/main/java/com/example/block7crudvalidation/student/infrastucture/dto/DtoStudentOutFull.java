@@ -1,7 +1,6 @@
 package com.example.block7crudvalidation.student.infrastucture.dto;
 
 import com.example.block7crudvalidation.student.domain.Student;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -31,7 +30,7 @@ public class DtoStudentOutFull extends DtoStudentOut{
         setName(student.getPerson().getName());
         setSurname(student.getPerson().getSurname());
         setCompanyEmail(student.getPerson().getCompany_email());
-        setPersonalEmail(student.getPerson().getPersonal_email());
+        setPersonalEmail(student.getPerson().getPersonalEmail());
         setCity(student.getPerson().getCity());
         setActive(student.getPerson().getActive());
         setCreatedDate(student.getPerson().getCreated_date());

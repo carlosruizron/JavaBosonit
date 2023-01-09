@@ -16,12 +16,13 @@ public class DtoPersonOut {
     private String name;
     private String surname;
     private String company_email;
-    private String personal_email;
+    private String personalEmail;
     private String city;
     private boolean active;
     private Date created_date;
     private String image_url;
     private Date termination_date;
+    private Boolean admin;
 
     public DtoPersonOut(Person person) {
 
@@ -31,12 +32,13 @@ public class DtoPersonOut {
         setName(person.getName());
         setSurname(person.getSurname());
         setCompany_email(person.getCompany_email());
-        setPersonal_email(person.getPersonal_email());
+        setPersonalEmail(person.getPersonalEmail());
         setCity(person.getCity());
         setActive(person.getActive());
         setCreated_date(person.getCreated_date());
         setImage_url(person.getImage_url());
         setTermination_date(person.getTermination_date());
+        setAdmin(person.getAdmin());
     }
 
 }

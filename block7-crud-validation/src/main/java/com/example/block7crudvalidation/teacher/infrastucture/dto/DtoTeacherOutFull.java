@@ -30,7 +30,7 @@ public class DtoTeacherOutFull extends DtoTeacherOut {
         setName(teacher.getPerson().getName());
         setSurname(teacher.getPerson().getSurname());
         setCompanyEmail(teacher.getPerson().getCompany_email());
-        setPersonalEmail(teacher.getPerson().getPersonal_email());
+        setPersonalEmail(teacher.getPerson().getPersonalEmail());
         setCity(teacher.getPerson().getCity());
         setActive(teacher.getPerson().getActive());
         setCreatedDate(teacher.getPerson().getCreated_date());

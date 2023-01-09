@@ -43,7 +43,7 @@ public class PersonController {
         return personService.createPerson(dtoPersonInp);
     }
 
-    @CrossOrigin(origins = "https://cdpn.io")
+//    @CrossOrigin(origins = "https://cdpn.io")
     @GetMapping
     public List<DtoPersonOut> getAll() {
         return personService.getAll();
@@ -87,6 +87,12 @@ public class PersonController {
     public List<DtoPersonOut> getByName(@PathVariable(name="name") String name) throws EntityNotFoundException {
 
         return personService.getByName(name);
+    }
+
+    @GetMapping(value="/username/{username}")
+    public DtoPersonOut getByUsername(@PathVariable(name="username") String username) throws EntityNotFoundException {
+
+        return personService.getByUsername(username);
     }
 
     @CrossOrigin(origins = "https://cdpn.io")
