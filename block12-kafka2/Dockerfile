@@ -1,3 +1,3 @@
 FROM openjdk:17
-COPY /target/*.jar appKafka2.jar
-ENTRYPOINT ["java", "-jar", "/appKafka2.jar"]
+COPY /target/*.jar block12-kafka2-0.0.1.jar
+ENTRYPOINT ["java", "-jar", "/block12-kafka2-0.0.1.jar"]

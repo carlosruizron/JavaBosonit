@@ -15,12 +15,12 @@ public class Controller {
 
     @PostMapping("/send/{message}")
     public String sendMessage(@PathVariable String message) {
-        String answer = "Se ha realizado con exito";
+
         try {
             producerKafka2.sendMessage(message);
+            return "Se ha realizado con éxito";
         } catch(Exception e) {
-            answer = "Error";
+            return "Error";
         }
-        return answer;
     }
 }
