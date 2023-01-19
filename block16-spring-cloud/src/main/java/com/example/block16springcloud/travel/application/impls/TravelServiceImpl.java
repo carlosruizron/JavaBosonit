@@ -52,7 +52,7 @@ public class TravelServiceImpl implements TravelService {
 
     @Override
     public String updateStatusTravel(Integer id, String status) {
-        Travel travel = travelRepository.findById(id).orElseThrow(()-> new EntityNotFoundException("No se ha encontrado el id " + id));
+        Travel travel = travelRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("No se ha encontrado el id " + id));
         travel.setStatus(status);
         travelRepository.save(travel);
         return "El estado del autobús se ha cambiado a " + status;
